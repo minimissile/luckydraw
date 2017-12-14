@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>来抽奖吧</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div id='index' v-cloak>
+    <div class="wrap">
+
+        <div class="prize_con">
+            <div class='img-wrapper'>
+                <p>一等奖</p>
+                <div>
+                    <img src="./img/luckydraw/01.jpg" alt="">
+                </div>
+                <p>二等奖</p>
+                <div>
+                    <img src="./img/luckydraw/02.jpg" alt="">
+                </div>
+                <p>三等奖</p>
+                <div>
+                    <img src="./img/luckydraw/03.jpg" alt="">
+                </div>
+            </div>
+            <div class='axb'>
+                <div class='axb1'>
+                    <p></p>
+                    <ul class='axb1ul'></ul>
+                </div>
+                <div class='axb2'>
+                    <p></p>
+                    <ul class='axb1ul'></ul>
+                </div>
+                <div class='axb3'>
+                    <p></p>
+                    <ul class='axb1ul'></ul>
+                </div>
+            </div>
+            <p class="prize_grade">
+                <span>开始抽奖</span> <b>0</b>元
+            </p>
+            <div class="prize_list vetically">
+                <ul>
+                    <li v-for='item in code'>{{item.phone}}</li>
+                </ul>
+            </div>
+            <p class="start"><img src="images/prize_start.png" alt=""></p>
+            <p class="start" @click='start'></p>
+            <ul class="prize_set">
+                <li class="set_grade">奖等&nbsp;
+                    <select id="set_grade">
+                        <option>选择奖等</option>
+                        <option>特等奖</option>
+                        <option>一等奖</option>
+                        <option>二等奖</option>
+                        <option>三等奖</option>
+                    </select>
+                </li>
+                <li class="set_people">人数&nbsp;<input type="tel" placeholder="输入中奖人数" id="prizeCount"></li>
+                <li class="set_money">金额<input type="tel" placeholder="输入中奖金额" id="prizeMoney"></li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" value="0" id="prize_btn">
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/index.js"></script>
+</html>
